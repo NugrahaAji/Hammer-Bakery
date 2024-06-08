@@ -27,7 +27,6 @@ void Login(){
 
 void SignUp(){
     string UserName, Password,ConfirmPassword;
-    bool status = false;
 
     cout << "SIGN UP ^.^\n\n";
     cout << "Username\t\t: ";
@@ -42,7 +41,7 @@ void SignUp(){
         cout << "Confirm Your Password\t: ";
         cin >> ConfirmPassword;
     }
-    
+
     ofstream file;
     file.open(UserName + ".txt");
     file << UserName << endl << Password;
