@@ -1,6 +1,6 @@
 #include<iostream>
-#include <conio.h>
-#include <windows.h>
+#include<conio.h>
+#include<windows.h>
 #include<fstream>
 #include<string>
 using namespace std;
@@ -36,22 +36,20 @@ void Login(){
     cout << "Password\t: ";
     cin >> Password;
 
-    ifstream read(UserName + ".txt");
-    getline(read, un);
-    getline(read, pass);
-
-    if(un == UserName && pass == Password){
+    ifstream read("dataAcc.txt");
+    while(read >> un >> pass){
+        if(un == UserName && pass == Password){
         status = true;
+        }
+        else status = false;
     }
-    else status = false;
 
-    if(status == true){
+    if(status == true){ 
         cout << "Welcome " << UserName <<"!\n";
     }
     else{
-        cout << "This Credentials do not found !"<<"!\n";
-    }
-    
+        cout << "Error! Please check your username and password!\n";
+    }   
 }
 
 void SignUp(){
@@ -71,14 +69,11 @@ void SignUp(){
         cin >> ConfirmPassword;
     }
 
-    ofstream file;
-    file.open(UserName + ".txt");
-    file << UserName << endl << Password;
-    file.close();
+    ofstream file("dataAcc.txt", ios::app);
+    file << UserName << " " << Password << endl;
+    //system("cls");
     cout << "\nSigning Up succesfull\n";
-
 }
-
 
 
 int main(){
