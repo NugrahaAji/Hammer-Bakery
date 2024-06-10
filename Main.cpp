@@ -1,7 +1,30 @@
 #include<iostream>
+#include <conio.h>
+#include <windows.h>
 #include<fstream>
 #include<string>
 using namespace std;
+
+#define SCREEN_WIDTH 90
+#define SCREEN_HEIGHT 29
+#define WIN_WIDTH 70
+
+#define BLACK 0
+#define BLUE 1
+#define CYAN 3
+#define RED 4
+#define PINK 13
+#define YELLOW 14
+
+HANDLE Console = GetStdHandle(STD_OUTPUT_HANDLE);
+COORD CursorPosition;
+
+void gotoxy(int x, int y)
+{
+	CursorPosition.X = x;
+	CursorPosition.Y = y;
+	SetConsoleCursorPosition(Console, CursorPosition);
+}
 
 void Login(){
     string pass, un, Password, UserName;
@@ -22,7 +45,13 @@ void Login(){
     }
     else status = false;
 
-    cout << "Welcome " << UserName <<"!\n";
+    if(status == true){
+        cout << "Welcome " << UserName <<"!\n";
+    }
+    else{
+        cout << "This Credentials do not found !"<<"!\n";
+    }
+    
 }
 
 void SignUp(){
@@ -49,6 +78,8 @@ void SignUp(){
     cout << "\nSigning Up succesfull\n";
 
 }
+
+
 
 int main(){
     char opt;
