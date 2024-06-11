@@ -6,7 +6,8 @@
 #include<cstring>
 #include<map>
 #include<ctime>
-#include <vector>
+#include<stack>
+#include<vector>
 #include<algorithm>
 
 using namespace std;
@@ -156,6 +157,26 @@ public:
         }
     } else {
         cout << "No transaction history found." << endl;
+    }
+
+    }
+    void viewNewTransactionHistory() {
+        ifstream file(UserName + "_history.txt");
+        string line;
+        stack<string> historyStack;
+
+        if (file.is_open()) {
+            while (getline(file, line)) {
+                historyStack.push(line);
+            }
+            file.close();
+
+            while (!historyStack.empty()) {
+                cout << historyStack.top() << endl;
+                historyStack.pop();
+            }
+        } else {
+            cout << "No transaction history found." << endl;
     }
 }
 };
@@ -473,6 +494,32 @@ void TransactionHistory(User& currentUser){
     getch();
 }
 
+void NewestTransactionHistory(User& currentUser){
+    system("cls");
+    textcol(CYAN);
+    cout << "Newest Transaction History for " << currentUser.getUserName() << ":\n";
+    textcol(WHITE);
+    currentUser.viewNewTransactionHistory();
+    getch();
+}
+
+void History(User& currentUser){
+    char opt;
+    system("cls");
+    textcol(CYAN);
+    cout << "1. Sort By Newest Transaction \n";
+    cout << "2. Sort By Name Cake (A-Z) \n";
+    textcol(WHITE);
+    cout << "Your Choice\t: ";
+    cin >> opt;
+    if(opt == '1'){
+        NewestTransactionHistory(currentUser);
+    }
+    else if(opt == '2'){
+        TransactionHistory(currentUser);
+    }
+}
+
 void Homepage(User& currentUser){
   bool exit = false;
   while(!exit){
@@ -492,7 +539,7 @@ void Homepage(User& currentUser){
     }
     else if(opt == '2'){
 
-    TransactionHistory(currentUser);
+    History(currentUser);
     }
     else if(opt == '3'){
 
