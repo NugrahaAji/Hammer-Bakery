@@ -37,15 +37,12 @@ void cls() {
     system("cls");
 }
 
-<<<<<<< HEAD
 void LowerCase(std::string& inputString) {
     for (char* ptr = &inputString[0]; *ptr != '\0'; ++ptr) {
         *ptr = std::tolower(*ptr);
     }
 }
 
-=======
->>>>>>> a019facae8349ca19f55f5e8679c2b3c7e39e2d9
 class User{
     private:
         string UserName, Password; 
@@ -177,7 +174,6 @@ void SignUp(){
 }
 
 void Catalogue(){
-<<<<<<< HEAD
   // 1. Cheese Cake
   // 2. Tart
   // 3. Black Forest
@@ -340,26 +336,13 @@ topping["hazelnuts"] = 5000;
 
 void TransactionHistory(){
   //view
-=======
-  
-}
-
-void TransactionHistory(){
-  
->>>>>>> a019facae8349ca19f55f5e8679c2b3c7e39e2d9
 }
 
 void Homepage(){
   char opt;
-<<<<<<< HEAD
   cout << "1. Cake Catlogue\n";
   cout << "2. Transaction history\n";
   cout << "3. Log Out\n";
-=======
-  cout << "1. Cake Cake Catlogue\n";
-  cout << "2. Transaction history\n";
-  cout << "3. Log Out";
->>>>>>> a019facae8349ca19f55f5e8679c2b3c7e39e2d9
   cout << "Your Choice\t: ";
   cin >> opt;
   
@@ -381,7 +364,6 @@ int main(){
   do{
     char opt;
         cout << "\n\t\t\t =================================================" << endl;
-<<<<<<< HEAD
         cout << "\t\t\t\t %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%";
         cout << "\n\t\t\t\t       Welcome to Hammer Bakery";
         cout << "\n\t\t\t %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%";
@@ -399,12 +381,6 @@ int main(){
         cout << "\t\t\t\t  | | | | | | | | |   " << endl;
         cout << "\t\t\t\t  J | | | | | | | F   " << endl;
         cout << "\t\t\t\t   `---.|.|.|.---'    " << endl;
-=======
-        cout << "\t\t\t %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%";
-        cout << "\n\t\t\t\t       Welcome to Hammer Bakery";
-        cout << "\n\t\t\t %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%";
-        cout << "\n\t\t\t =================================================" << endl;
->>>>>>> a019facae8349ca19f55f5e8679c2b3c7e39e2d9
         cout << "\n\n\t\t\t\t      1. Login" << endl;
         cout << "\n\t\t\t\t      2. Sign Up" << endl;
         cout << "\n\t\t\t\t      3. Exit" << endl;
@@ -423,8 +399,4 @@ int main(){
     }
   }while(!exit);
   return 0;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> a019facae8349ca19f55f5e8679c2b3c7e39e2d9
