@@ -28,6 +28,10 @@ void gotoxy(int x, int y)
 	SetConsoleCursorPosition(Console, CursorPosition);
 }
 
+void cls() {
+    system("cls");
+}
+
 class User{
     private:
         string UserName, Password; 
@@ -162,6 +166,8 @@ void Homepage(){
 
 int main(){
   bool exit = false;
+  cls();
+  
   do{
     char opt;
         cout << "\n\t\t\t =================================================" << endl;
