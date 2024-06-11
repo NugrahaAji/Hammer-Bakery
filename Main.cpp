@@ -164,7 +164,15 @@ int main(){
   bool exit = false;
   do{
     char opt;
-    cout << "1. Login\n2. Sign Up\n3. Exit\n";
+        cout << "\n\t\t\t =================================================" << endl;
+        cout << "\t\t\t %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%";
+        cout << "\n\t\t\t\t       Welcome to Hammer Bakery";
+        cout << "\n\t\t\t %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%";
+        cout << "\n\t\t\t =================================================" << endl;
+        cout << "\n\n\t\t\t\t\t      1. Login" << endl;
+        cout << "\n\t\t\t\t      2. Sign Up" << endl;
+        cout << "\n\t\t\t\t      3. Exit" << endl;
+        cout << "\n\t\t\t\t      Enter option: ";
     cin >> opt;
     switch(opt){
         case '1':
