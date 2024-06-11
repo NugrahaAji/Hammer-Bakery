@@ -113,8 +113,8 @@ void SignUp(){
     cin >> Password;
 
     while(!isValidPassword(Password)){
-        cout <<"Password setidaknya harus memiliki 1 huruf besar, 1 huruf kecil dan 1 angka !!"<<endl;
-        cout <<"Masukkan Password: ";
+        cout <<"Password must contain lower case, upper case, and number!"<<endl;
+        cout <<"Password\t\t: ";
         cin >> Password;
     }
 
@@ -133,10 +133,38 @@ void SignUp(){
     cout << "\nSigning Up succesfull\n";
 }
 
+void Catalogue(){
+  
+}
+
+void TransactionHistory(){
+  
+}
+
+void Homepage(){
+  char opt;
+  cout << "1. Cake Cake Catlogue\n";
+  cout << "2. Transaction history\n";
+  cout << "3. Log Out";
+  cout << "Your Choice\t: ";
+  cin >> opt;
+  
+  if(opt == '1'){
+    Catalogue();
+  }
+  else if(opt == '2'){
+   TransactionHistory();
+  }
+  else if(opt == '3'){
+    return ;
+  }
+}
 
 int main(){
+  bool exit = false;
+  do{
     char opt;
-    cout << "1. Login\n2. Sign Up\n";
+    cout << "1. Login\n2. Sign Up\n3. Exit\n";
     cin >> opt;
     switch(opt){
         case '1':
@@ -146,5 +174,9 @@ int main(){
             SignUp();
             Login();
             break;
+      	case '3':
+        	exit = true;
     }
+  }while(!exit);
+  return 0;
 }
