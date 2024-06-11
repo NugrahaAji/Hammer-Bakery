@@ -4,6 +4,7 @@
 #include<fstream>
 #include<string>
 #include<cstring>
+#include<ctime>
 using namespace std;
 
 #define SCREEN_WIDTH 90
@@ -26,6 +27,32 @@ void gotoxy(int x, int y)
 	CursorPosition.Y = y;
 	SetConsoleCursorPosition(Console, CursorPosition);
 }
+
+class User{
+    private:
+        string UserName, Password; 
+    public:
+        User(string UserName, string Password){
+            this -> UserName = UserName;
+            this -> Password = Password;
+        }
+
+        void setUserName(string UserName){
+            this -> UserName = UserName;
+        }
+
+        void setPassword(string Password){
+            this -> Password = Password;
+        }
+
+        string getUserName(){
+            return UserName;
+        }
+
+        string getPassword(){
+            return Password;
+        }
+};
 
 bool isValidPassword(const char * password){
     int upper = 0;
